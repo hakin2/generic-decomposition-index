@@ -1,0 +1,49 @@
+--- /tmp/equitruss/TecIndexSB.java	2026-09-20 23:41:35
++++ src/TecIndexSB.java	2026-09-21 00:29:36
+@@ -3,11 +3,26 @@
+ //my index class to create index and to make search on the index
+ public class TecIndexSB extends TecIndexG {
+ 
++	/*
++	 * PATCH 1 of 2 (the only changes to the original index code).
++	 *
++	 * Trussness 2 means "contained in no triangle", so the original code discards
++	 * level 2 as trivial. That assumption is truss-specific. Under k-core weights a
++	 * level-2 edge is a legitimate member of the 2-core, and dropping it silently
++	 * loses edges from every answer at k <= 2. Leave true for truss, set false for
++	 * any other weighting.
++	 */
++	public boolean dropLevel2 = true;
++
++	/* See PATCH 3 below. Off by default so query timings are not measuring stdout. */
++	public boolean verboseQuery = false;
++
+ 	public void constructIndex(Map<Integer, LinkedHashSet<MyEdge>> klistdict, Map<MyEdge, Integer> trussd, MyGraph mg) {
+ 		Map<MyEdge, HashMap<Integer, Integer>> edgeigd = new HashMap<MyEdge, HashMap<Integer, Integer>>();
+ 
+ 		int t1, t2, tnid = 0;// #tree node id
+-		if (klistdict.containsKey(2))
++		// PATCH 2 of 2: gated on dropLevel2, see the field comment above.
++		if (dropLevel2 && klistdict.containsKey(2))
+ 			klistdict.remove(2);
+ 		MyEdge ek, e1, e2, e;
+ 		HashSet<MyEdge> proes;
+@@ -133,8 +148,16 @@
+ 					}
+ 				}
+ 				cl.add(community);
+-				System.out.print("Number of edges in this community: ");
+-				System.out.println(community.size());
++				/*
++				 * PATCH 3 of 3: gated. These two lines sit inside the timed query path.
++				 * Console I/O costs far more than the traversal itself, so leaving them
++				 * on makes every query measurement meaningless (and floods stdout during
++				 * warm-up). Logic is untouched.
++				 */
++				if (verboseQuery) {
++					System.out.print("Number of edges in this community: ");
++					System.out.println(community.size());
++				}
+ 			}
+ 
+ 		}

@@ -1,0 +1,20 @@
+# Build output
+out/
+*.class
+
+# Downloaded SNAP graphs, ~13 MB, regenerable. See REPORT.md section 9 for the
+# curl commands. The hand-built toy graph and all query sets ARE committed, so
+# the reported numbers reproduce exactly without regenerating any query file.
+data/*.el
+data/*.gz
+
+# Generated results. Only the artifacts REPORT.md cites are kept: the figures
+# and the per-query CSVs. Index dumps and raw query output are large and
+# regenerable. The re-include dance is required because excluding a directory
+# stops git descending into it at all.
+results/*
+!results/*/
+results/*/*
+!results/*/sweep.csv
+!results/*/sweep.png
+!results/*/bench.csv

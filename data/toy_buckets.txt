@@ -1,0 +1,15 @@
+# degree-percentile buckets, k=2, 5 per bucket, seed=42
+# graph: 12 vertices, 19 edges, max core 3
+# vertex,k,bucket
+1,2,p0_10
+2,2,p10_20
+4,2,p20_30
+5,2,p30_40
+3,2,p40_50
+6,2,p40_50
+7,2,p50_60
+8,2,p60_70
+10,2,p70_80
+11,2,p80_90
+12,2,p90_100
+9,2,p90_100

@@ -1,0 +1,7 @@
+# high-core vertices, high k so E_k stays brute-forceable
+89910,40
+89910,60
+31470,40
+31470,60
+67024,40
+67024,60
