@@ -1,0 +1,4 @@
+graph,k,queries,nonempty_queries,multi_community_queries,equitruss_mean_ms,tcp_mean_ms,indexfree_mean_ms,tcp_over_equi,free_over_equi,free_over_tcp
+ca-GrQc,5,1000,179,39,0.010145,0.018571,0.707056,1.83,69.70,38.07
+com-Amazon,4,1000,511,220,0.025117,0.047062,0.332329,1.87,13.23,7.06
+com-DBLP,5,1000,321,95,7.574697,17.901210,262.824302,2.36,34.70,14.68

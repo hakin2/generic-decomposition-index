@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
-"""Plot a sweep.csv produced by MainSweep.
+"""Plot a sweep CSV produced by MainSweep or MainTcpSweep.
 
-Two panels, mirroring the paper's second query experiment:
-  left  - query time against k, log scale, four series (indexed/free x H/L)
-  right - speedup against k, plus mean answer size for context
-
-Log scale on time is necessary: the two methods differ by two to three orders of
-magnitude, so a linear axis would flatten the indexed series onto zero.
+The left panel shows query time against k. The right panel shows speedup and
+answer size. TCP series are included when present; pass --without-tcp to create
+the matching EquiTruss-versus-Index-Free figure.
 
 Usage:
-    python3 tools/plot_sweep.py results/grqc_sweep/sweep.csv results/grqc_sweep/sweep.png "ca-GrQc"
+    python3 tools/plot_sweep.py input.csv output.png "Dataset"
+    python3 tools/plot_sweep.py input.csv output.png "Dataset" --without-tcp
 """
 
 import csv
@@ -18,69 +16,85 @@ from collections import defaultdict
 
 import matplotlib
 
-matplotlib.use("Agg")  # no display in this environment
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 
 def main():
     csv_path, png_path = sys.argv[1], sys.argv[2]
-    title = sys.argv[3] if len(sys.argv) > 3 else csv_path
+    title = sys.argv[3] if len(sys.argv) > 3 and not sys.argv[3].startswith("--") else csv_path
+    include_tcp = "--without-tcp" not in sys.argv[3:]
 
     rows = list(csv.DictReader(open(csv_path)))
-    series = defaultdict(dict)   # (method, set) -> {k: median_ms}
-    edges = defaultdict(dict)    # set -> {k: mean answer edges}
-    for r in rows:
-        k = int(r["k"])
-        series[(r["method"], r["set"])][k] = float(r["median_ms"])
-        if r["method"] == "indexed":
-            edges[r["set"]][k] = int(r["mean_answer_edges"])
+    series = defaultdict(dict)
+    edges = defaultdict(dict)
+    for row in rows:
+        k = int(row["k"])
+        method = "equitruss" if row["method"] == "indexed" else row["method"]
+        series[(method, row["set"])][k] = float(row["median_ms"])
+        if method == "equitruss":
+            edges[row["set"]][k] = int(row["mean_answer_edges"])
 
-    ks = sorted({int(r["k"]) for r in rows})
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5))
+    ks = sorted({int(row["k"]) for row in rows})
+    fig, (time_axis, speedup_axis) = plt.subplots(1, 2, figsize=(13, 5))
 
-    style = {
-        ("indexed", "H"): ("o-", "tab:blue", "indexed, high degree"),
-        ("indexed", "L"): ("s-", "tab:cyan", "indexed, low degree"),
-        ("free", "H"): ("o--", "tab:red", "index-free, high degree"),
-        ("free", "L"): ("s--", "tab:orange", "index-free, low degree"),
+    styles = {
+        ("equitruss", "H"): ("o-", "tab:blue", "EquiTruss, high degree"),
+        ("equitruss", "L"): ("s-", "tab:cyan", "EquiTruss, low degree"),
+        ("tcp", "H"): ("^-", "tab:green", "TCP-style, high degree"),
+        ("tcp", "L"): ("v-", "tab:olive", "TCP-style, low degree"),
+        ("free", "H"): ("o--", "tab:red", "Index-Free, high degree"),
+        ("free", "L"): ("s--", "tab:orange", "Index-Free, low degree"),
     }
-    for key, (mk, colour, label) in style.items():
+    for key, (marker, colour, label) in styles.items():
+        if key[0] == "tcp" and not include_tcp:
+            continue
         if key not in series:
             continue
-        ys = [series[key].get(k, float("nan")) for k in ks]
-        ax1.plot(ks, ys, mk, color=colour, label=label, markersize=5)
+        time_axis.plot(ks, [series[key].get(k, float("nan")) for k in ks], marker,
+                           color=colour, label=label, markersize=5)
 
-    ax1.set_yscale("log")
-    ax1.set_xlabel("k")
-    ax1.set_ylabel("query time (ms, median of repetitions)")
-    ax1.set_title(f"{title}: query time vs k")
-    ax1.grid(True, which="both", alpha=0.3)
-    ax1.legend(fontsize=8)
+    time_axis.set_yscale("log")
+    time_axis.set_xlabel("k")
+    time_axis.set_ylabel("query time (ms, median of repetitions)")
+    time_axis.set_title(f"{title}: query time vs k")
+    time_axis.grid(True, which="both", alpha=0.3)
+    time_axis.legend(fontsize=8)
 
-    for s, colour, mk in (("H", "tab:blue", "o-"), ("L", "tab:cyan", "s-")):
-        if ("indexed", s) not in series:
+    for query_set, colour, marker in (("H", "tab:blue", "o-"), ("L", "tab:cyan", "s-")):
+        if ("equitruss", query_set) not in series or ("free", query_set) not in series:
             continue
-        sp = []
+        free_speedup = []
         for k in ks:
-            i = series[("indexed", s)].get(k, 0)
-            f = series[("free", s)].get(k, 0)
-            sp.append(f / i if i else float("nan"))
-        ax2.plot(ks, sp, mk, color=colour, label=f"speedup, {'high' if s == 'H' else 'low'} degree",
-                 markersize=5)
+            equi = series[("equitruss", query_set)].get(k, 0)
+            free = series[("free", query_set)].get(k, 0)
+            free_speedup.append(free / equi if equi else float("nan"))
+        speedup_axis.plot(ks, free_speedup, marker, color=colour,
+                          label=f"Index-Free / EquiTruss, {query_set}", markersize=5)
 
-    ax2.set_xlabel("k")
-    ax2.set_ylabel("speedup (index-free / indexed)")
-    ax2.set_title(f"{title}: speedup vs k")
-    ax2.grid(True, alpha=0.3)
-    ax2.legend(fontsize=8, loc="upper left")
+        if include_tcp and ("tcp", query_set) in series:
+            tcp_speedup = []
+            for k in ks:
+                equi = series[("equitruss", query_set)].get(k, 0)
+                tcp = series[("tcp", query_set)].get(k, 0)
+                tcp_speedup.append(tcp / equi if equi else float("nan"))
+            speedup_axis.plot(ks, tcp_speedup, marker.replace("-", ":"), color="tab:green",
+                              label=f"TCP-style / EquiTruss, {query_set}", markersize=5)
 
-    ax3 = ax2.twinx()
+    speedup_axis.set_xlabel("k")
+    speedup_axis.set_ylabel("relative query time")
+    speedup_axis.set_yscale("log")
+    speedup_axis.set_title(f"{title}: speedup vs k")
+    speedup_axis.grid(True, which="both", alpha=0.3)
+    speedup_axis.legend(fontsize=8, loc="upper left")
+
+    answer_axis = speedup_axis.twinx()
     if "H" in edges:
-        ax3.plot(ks, [edges["H"].get(k, 0) for k in ks], "^:", color="grey", markersize=4,
-                 label="answer size, high degree")
-        ax3.set_yscale("symlog")
-        ax3.set_ylabel("mean answer edges (grey, symlog)", color="grey")
-        ax3.legend(fontsize=8, loc="upper right")
+        answer_axis.plot(ks, [edges["H"].get(k, 0) for k in ks], "^:", color="grey", markersize=4,
+                         label="answer size, high degree")
+        answer_axis.set_yscale("symlog")
+        answer_axis.set_ylabel("mean answer edges (grey, symlog)", color="grey")
+        answer_axis.legend(fontsize=8, loc="upper right")
 
     plt.tight_layout()
     plt.savefig(png_path, dpi=150)

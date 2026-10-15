@@ -1,0 +1,7 @@
+graph,method,repetitions,vertices,edges,max_core,core_decomposition_s,construction_s,estimated_mb,structure_nodes,structure_edges
+data/ca-GrQc.el,equitruss,3,5241,14484,43,0.026271,0.049892,0.318886,3387,1075
+data/ca-GrQc.el,tcp,3,5241,14484,43,0.026648,0.074360,0.744854,28968,20847
+data/com-amazon.ungraph.el,equitruss,3,334863,925872,6,2.090957,2.284942,22.609440,297882,60021
+data/com-amazon.ungraph.el,tcp,3,334863,925872,6,2.061279,2.822510,44.559231,1851744,1132526
+data/com-dblp.ungraph.el,equitruss,3,317080,1049866,113,1.854257,2.960246,23.135468,232067,150130
+data/com-dblp.ungraph.el,tcp,3,317080,1049866,113,1.811424,4.198474,54.676647,2099732,1587483

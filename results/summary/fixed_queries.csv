@@ -1,0 +1,4 @@
+graph,k,queries,nonempty_queries,multi_community_queries,indexed_mean_ms,indexfree_mean_ms,speedup_all,mean_answer_edges_all,indexed_nonempty_mean_ms,indexfree_nonempty_mean_ms,speedup_nonempty,mean_answer_edges_nonempty
+ca-GrQc,5,1000,179,39,0.006743,0.707056,104.86,327.796,0.035998,3.947915,109.67,1831.263
+com-Amazon,4,1000,511,220,0.027940,0.332329,11.89,291.635,0.053307,0.648673,12.17,570.714
+com-DBLP,5,1000,321,95,9.345904,262.824302,28.12,80515.159,29.112205,818.758811,28.12,250826.040

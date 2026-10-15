@@ -1,0 +1,7 @@
+graph,run,method,vertices,edges,max_core,core_decomposition_s,construction_s,estimated_mb,structure_nodes,structure_edges
+data/com-amazon.ungraph.el,1,tcp,334863,925872,6,2.061279,2.849726,44.559231,1851744,1132526
+data/com-amazon.ungraph.el,1,equitruss,334863,925872,6,2.090957,2.291806,22.609440,297882,60021
+data/com-amazon.ungraph.el,2,tcp,334863,925872,6,2.078350,2.822510,44.559231,1851744,1132526
+data/com-amazon.ungraph.el,2,equitruss,334863,925872,6,2.028073,2.284942,22.609440,297882,60021
+data/com-amazon.ungraph.el,3,tcp,334863,925872,6,1.997620,2.800422,44.559231,1851744,1132526
+data/com-amazon.ungraph.el,3,equitruss,334863,925872,6,2.137156,2.271645,22.609440,297882,60021

@@ -1,0 +1,7 @@
+graph,run,method,vertices,edges,max_core,core_decomposition_s,construction_s,estimated_mb,structure_nodes,structure_edges
+data/ca-GrQc.el,1,tcp,5241,14484,43,0.031314,0.074360,0.744854,28968,20847
+data/ca-GrQc.el,1,equitruss,5241,14484,43,0.027130,0.049859,0.318886,3387,1075
+data/ca-GrQc.el,2,tcp,5241,14484,43,0.026470,0.075644,0.744854,28968,20847
+data/ca-GrQc.el,2,equitruss,5241,14484,43,0.026271,0.049892,0.318886,3387,1075
+data/ca-GrQc.el,3,tcp,5241,14484,43,0.026648,0.062680,0.744854,28968,20847
+data/ca-GrQc.el,3,equitruss,5241,14484,43,0.025361,0.051245,0.318886,3387,1075

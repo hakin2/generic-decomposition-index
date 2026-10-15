@@ -178,15 +178,17 @@ public class MainSweep {
 
         /* ---------------- output ---------------- */
         BufferedWriter bw = new BufferedWriter(new FileWriter(outDir + "/sweep.csv"));
-        bw.write("k,set,method,median_ms,min_ms,max_ms,mean_answer_edges,queries,reps\n");
+        bw.write("k,set,method,median_ms,min_ms,max_ms,mean_answer_edges,total_answer_edges,queries,reps,query_fingerprint\n");
         for (int k : ks) {
             for (String s : sets.keySet()) {
+                String fingerprint = ExperimentFingerprint.forVertices(s, sets.get(s));
                 for (String m : new String[] { "indexed", "free" }) {
                     Cell c = results.get(cellKey(k, s, m));
                     double[] sorted = c.repMeans.clone();
                     Arrays.sort(sorted);
-                    bw.write(String.format("%d,%s,%s,%.6f,%.6f,%.6f,%d,%d,%d%n", k, s, m, median(c.repMeans),
-                            sorted[0], sorted[sorted.length - 1], c.answerEdges / c.queries, c.queries, reps));
+                    bw.write(String.format("%d,%s,%s,%.6f,%.6f,%.6f,%d,%d,%d,%d,%s%n", k, s, m,
+                            median(c.repMeans), sorted[0], sorted[sorted.length - 1], c.answerEdges / c.queries,
+                            c.answerEdges, c.queries, reps, fingerprint));
                 }
             }
         }

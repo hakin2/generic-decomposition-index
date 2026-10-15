@@ -1,0 +1,4 @@
+graph,repetitions,min_peak_rss_gib,max_peak_rss_gib
+ca-GrQc,3,0.171,0.172
+com-Amazon,3,1.420,1.639
+com-DBLP,3,1.859,3.124

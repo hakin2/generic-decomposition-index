@@ -1,0 +1,7 @@
+graph,run,method,vertices,edges,max_core,core_decomposition_s,construction_s,estimated_mb,structure_nodes,structure_edges
+data/com-dblp.ungraph.el,1,tcp,317080,1049866,113,1.811424,4.198474,54.676647,2099732,1587483
+data/com-dblp.ungraph.el,1,equitruss,317080,1049866,113,1.854257,3.005052,23.135468,232067,150130
+data/com-dblp.ungraph.el,2,tcp,317080,1049866,113,1.922082,4.201115,54.676647,2099732,1587483
+data/com-dblp.ungraph.el,2,equitruss,317080,1049866,113,1.959686,2.830142,23.135468,232067,150130
+data/com-dblp.ungraph.el,3,tcp,317080,1049866,113,1.757535,4.158569,54.676647,2099732,1587483
+data/com-dblp.ungraph.el,3,equitruss,317080,1049866,113,1.849117,2.960246,23.135468,232067,150130
