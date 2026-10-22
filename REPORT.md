@@ -74,7 +74,7 @@ The query protocol follows the EquiTruss paper:
 
 - **Fixed k:** ten degree groups, 100 sampled vertices per group, 1,000 queries per graph.
 - **Different k:** 100 high-degree vertices (`H`, top 30%) and 100 low-degree vertices (`L`, remaining 70%). The same vertices are reused at every `k`.
-- **Deep core:** 20 targeted DBLP vertices per set with core number at least 40.
+- **Deep core:** 20 targeted DBLP vertices per set with core number at least 40. Here `H` and `L` are higher- and lower-core strata within that filtered pool, not degree groups.
 
 Construction values are medians of three runs. Different-`k` query values are medians of five repetitions of mean query time.
 
@@ -139,42 +139,46 @@ The compact table shows selected high-degree (`H`) results. Complete H/L values 
 
 | Graph | k | Mean answer edges | EquiTruss (ms) | TCP-style (ms) | Index-Free (ms) | TCP / Equi | Free / Equi |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Amazon | 2 | 668 | 0.062772 | 0.117865 | 0.970665 | 1.9x | 15.5x |
-| Amazon | 4 | 402 | 0.023268 | 0.058182 | 0.494066 | 2.5x | 21.2x |
-| Amazon | 5 | 72 | 0.001033 | 0.004912 | 0.088525 | 4.8x | 85.7x |
-| DBLP | 2 | 343,465 | 49.706574 | 83.750290 | 1037.940763 | 1.7x | 20.9x |
-| DBLP | 5 | 212,294 | 21.554670 | 51.382229 | 757.494877 | 2.4x | 35.1x |
-| DBLP | 10 | 11,242 | 0.510424 | 1.625514 | 63.173618 | 3.2x | 123.8x |
-| DBLP | 20 | 360 | 0.003307 | 0.022392 | 2.653127 | 6.8x | 802.3x |
+| Amazon | 2 | 668.53 | 0.062772 | 0.117865 | 0.970665 | 1.9x | 15.5x |
+| Amazon | 4 | 402.51 | 0.023268 | 0.058182 | 0.494066 | 2.5x | 21.2x |
+| Amazon | 5 | 72.80 | 0.001033 | 0.004912 | 0.088525 | 4.8x | 85.7x |
+| DBLP | 2 | 343,465.12 | 49.706574 | 83.750290 | 1037.940763 | 1.7x | 20.9x |
+| DBLP | 5 | 212,294.34 | 21.554670 | 51.382229 | 757.494877 | 2.4x | 35.1x |
+| DBLP | 10 | 11,242.32 | 0.510424 | 1.625514 | 63.173618 | 3.2x | 123.8x |
+| DBLP | 20 | 360.07 | 0.003307 | 0.022392 | 2.653127 | 6.8x | 802.3x |
 
-**Result:** as `k` increases, answer size usually decreases. EquiTruss gains more over TCP-style and Index-Free when the answer is small but non-empty. Empty-result cells are retained in the figures but their speedup ratios are not interpreted.
+**Result:** as `k` increases, answer size usually decreases. EquiTruss gains more over TCP-style and Index-Free when the answer is small but non-empty. Zero-answer cells are omitted from the plotted lines and speedup ratios.
 
-#### Amazon — without and with TCP
+Each TCP/no-TCP pair below uses the same combined CSV and timing runs; only the TCP series is hidden in the no-TCP view.
 
-![Amazon without TCP](results/amazon_sweep/sweep.png)
+#### Amazon — TCP omitted and included
 
-![Amazon with TCP](results/amazon_combined/sweep_with_tcp.png)
+![Amazon with TCP series omitted](results/amazon_combined/sweep_without_tcp.png)
 
-#### DBLP — without and with TCP
+![Amazon with TCP series included](results/amazon_combined/sweep_with_tcp.png)
 
-![DBLP without TCP](results/dblp_sweep_100/sweep.png)
+#### DBLP — TCP omitted and included
 
-![DBLP with TCP](results/dblp_combined/sweep_with_tcp.png)
+![DBLP with TCP series omitted](results/dblp_combined/sweep_without_tcp.png)
+
+![DBLP with TCP series included](results/dblp_combined/sweep_with_tcp.png)
 
 ### 5. DBLP deep-core comparison
 
+The table shows selected higher-core-stratum (`H`) results.
+
 | k | Mean answer edges | EquiTruss (ms) | TCP-style (ms) | Index-Free (ms) | TCP / Equi | Free / Equi |
 |---:|---:|---:|---:|---:|---:|---:|
-| 40 | 6,886 | 0.021131 | 0.330456 | 68.564971 | 15.6x | 3,244.8x |
-| 60 | 6,098 | 0.021623 | 0.310873 | 58.946058 | 14.4x | 2,726.1x |
-| 90 | 6,054 | 0.023356 | 0.281660 | 57.710533 | 12.1x | 2,470.9x |
-| 113 | 4,508 | 0.016035 | 0.208069 | 42.866496 | 13.0x | 2,673.3x |
+| 40 | 6,886.2 | 0.021131 | 0.330456 | 68.564971 | 15.6x | 3,244.8x |
+| 60 | 6,098.8 | 0.021623 | 0.310873 | 58.946058 | 14.4x | 2,726.1x |
+| 90 | 6,054.0 | 0.023356 | 0.281660 | 57.710533 | 12.1x | 2,470.9x |
+| 113 | 4,508.7 | 0.016035 | 0.208069 | 42.866496 | 13.0x | 2,673.3x |
 
-This targeted experiment shows the best high-`k` regime and is not representative random-query performance.
+This targeted experiment shows the best high-`k` regime and is not representative random-query performance. Its `H` and `L` labels mean higher- and lower-core strata within the `core >= 40` pool.
 
-![DBLP deep core without TCP](results/dblp_deep/sweep.png)
+![DBLP deep core with TCP series omitted](results/dblp_deep_combined/sweep_without_tcp.png)
 
-![DBLP deep core with TCP](results/dblp_deep_combined/sweep_with_tcp.png)
+![DBLP deep core with TCP series included](results/dblp_deep_combined/sweep_with_tcp.png)
 
 ## Experiments not completed
 
