@@ -48,7 +48,7 @@ The EquiTruss index and query traversal were not redesigned. Level 2 is retained
 
 ### TCP-style comparison index
 
-A TCP-style index was independently implemented from Algorithms 3 and 4 of Huang et al. It is not copied from an external repository and is not the original authors' source code.
+A TCP-style index was independently implemented from Algorithms 3 and 4 of Huang et al.
 
 For each vertex `x`, every triangle `(x,y,z)` creates a local connection with level:
 
@@ -74,13 +74,13 @@ The query protocol follows the EquiTruss paper:
 
 - **Fixed k:** ten degree groups, 100 sampled vertices per group, 1,000 queries per graph.
 - **Different k:** 100 high-degree vertices (`H`, top 30%) and 100 low-degree vertices (`L`, remaining 70%). The same vertices are reused at every `k`.
-- **Deep core:** 20 targeted DBLP vertices per set with core number at least 40; this is a separate stress test, not a representative random sample.
+- **Deep core:** 20 targeted DBLP vertices per set with core number at least 40.
 
 Construction values are medians of three runs. Different-`k` query values are medians of five repetitions of mean query time.
 
 ### 1. k-core compared with k-truss
 
-Both rows use the EquiTruss structure; only the decomposition-derived edge levels change.
+Both rows use the EquiTruss structure and only the decomposition-derived edge levels change.
 
 | Graph | Metric | Decomposition (s) | Index construction (s) | Total (s) | Estimated index (MB) | Super-nodes | Super-edges | Compression, level >= 3 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
@@ -91,8 +91,6 @@ Both rows use the EquiTruss structure; only the decomposition-derived edge level
 | DBLP | k-truss | 9.1284 | **2.2034** | 11.3280 | **11.15** | 126,904 | 105,409 | 7.70 |
 | DBLP | k-core | **2.6066** | 3.0944 | **5.7766** | 15.13 | 232,067 | 150,130 | 6.58 |
 
-**Result:** k-core decomposition is 2.2x–3.5x faster, and total k-core preparation is 1.7x–2.6x faster. The raw k-core index is 1.36x–1.60x larger because meaningful levels 1 and 2 are also indexed. At level 3 and above, the GrQc compression difference almost disappears; Amazon and DBLP retain some additional fragmentation.
-
 ### 2. EquiTruss compared with TCP-style index construction
 
 Both indexes use the same k-core weights. Sizes are logical estimates from stored IDs and links, not total JVM heap usage.
@@ -102,8 +100,6 @@ Both indexes use the same k-core weights. Sizes are logical estimates from store
 | GrQc | 0.0744 | **0.0499** | 1.49x | 0.745 | **0.319** | 20,847 | 3,387 |
 | Amazon | 2.8225 | **2.2849** | 1.24x | 44.56 | **22.61** | 1,132,526 | 297,882 |
 | DBLP | 4.1985 | **2.9602** | 1.42x | 54.68 | **23.14** | 1,587,483 | 232,067 |
-
-**Result:** EquiTruss is 1.2x–1.5x faster to construct and its estimated compact index is 1.97x–2.36x smaller than the TCP-style adaptation. Each method was measured in a separate fresh JVM, and EquiTruss timing includes level bucketing.
 
 ### 3. Fixed-k query comparison
 
@@ -125,7 +121,7 @@ All methods use the same core weights and community definition. The TCP/EquiTrus
 | Amazon | **0.025117** | 0.047062 | 0.332329 | 1.87x | 7.06x |
 | DBLP | **7.574697** | 17.901210 | 262.824302 | 2.36x | 14.68x |
 
-**Result:** TCP-style is much faster than Index-Free, but EquiTruss is another 1.8x–2.4x faster than TCP-style. The EquiTruss values differ from the TCP-free table because that earlier table uses one timed pass, while this table uses five balanced repetitions; ratios should be interpreted within each table.
+The EquiTruss values differ from the TCP-free table because that earlier table uses one timed pass, while this table uses five balanced repetitions.
 
 `Mean answer edges` is the total number of edges across all communities returned by one query. Zero-result queries contribute zero.
 
@@ -182,12 +178,12 @@ This targeted experiment shows the best high-`k` regime and is not representativ
 
 ## Experiments not completed
 
-| Paper experiment or dataset | Reason |
-|---|---|
-| LiveJournal, Orkut, UK-2002 | The current object-heavy Java graph representation exceeds the available 18 GB RAM. A larger-memory machine or compact representation is required. |
-| Dynamic edge insertion/deletion | The k-core adaptation has no incremental core-number and index-maintenance implementation. Rebuilding from scratch would not reproduce the paper's dynamic algorithm. |
-| Named DBLP case study | The SNAP graph provides numeric IDs but no matching author-name map. The paper authors' mapping or a newly generated DBLP graph is required. |
-| Original TCP-Index binary/source | No author-issued public implementation was found. The TCP-style baseline here is an independent implementation of the published algorithms. |
+| Paper experiment or dataset | Reason | Question for advisor |
+|---|---|---|
+| LiveJournal, Orkut, UK-2002 | A larger-memory machine is required. | Do we have access to a larger-memory server? |
+| Dynamic edge insertion/deletion | The k-core adaptation has no incremental core-number and index-maintenance implementation. | Should I implement incremental updates or leave this out of scope? |
+| Named DBLP case study | The SNAP graph has numeric IDs but no matching author-name map. | Can you provide the ID-name mapping, or should I omit this case study? |
+| Original TCP-Index binary/source | The TCP-style baseline is an independent implementation of the published algorithms. | Is this acceptable, or can you provide the original TCP-Index code? |
 
 ## Result files
 
