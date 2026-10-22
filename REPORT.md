@@ -180,10 +180,10 @@ This targeted experiment shows the best high-`k` regime and is not representativ
 
 | Paper experiment or dataset | Reason | Question for advisor |
 |---|---|---|
-| LiveJournal, Orkut, UK-2002 | A larger-memory machine is required. | Do we have access to a larger-memory server? |
-| Dynamic edge insertion/deletion | The k-core adaptation has no incremental core-number and index-maintenance implementation. | Should I implement incremental updates or leave this out of scope? |
-| Named DBLP case study | The SNAP graph has numeric IDs but no matching author-name map. | Can you provide the ID-name mapping, or should I omit this case study? |
-| Original TCP-Index binary/source | The TCP-style baseline is an independent implementation of the published algorithms. | Is this acceptable, or can you provide the original TCP-Index code? |
+| LiveJournal, Orkut, UK-2002 | A larger-memory machine is required. | N/A |
+| Dynamic edge insertion/deletion | The k-core adaptation has no incremental core-number and index-maintenance implementation. | N/A |
+| Named DBLP case study | The SNAP graph has numeric IDs but no matching author-name map. | Can the ID-name mapping be provided |
+| Original TCP-Index binary/source | The TCP-style baseline is an independent implementation of the published algorithms. | Can the original TCP-Index code be provided? |
 
 ## Result files
 
