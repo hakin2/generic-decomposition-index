@@ -33,6 +33,7 @@ All three vertices have core number at least `k`, so the third edge also has wei
 - `MainBenchmark.java`, `MainSweep.java`, `MainMetricCompare.java`: experiments without TCP.
 - `MainTcpBenchmark.java`, `MainTcpSweep.java`, `MainIndexCompare.java`: TCP comparisons.
 - `tools/merge_tcp_results.py`: combines separately timed TCP and Index-Free runs.
+- `tools/run_large_experiments.py`: runs and resumes the complete static suite on another computer.
 - `tools/oracle.py`: independent correctness checker.
 - `TecIndexSB.java`: keeps the original index logic, with two gated fixes:
   - `dropLevel2 = false` for k-core because level 2 is meaningful.
@@ -134,6 +135,59 @@ grep -v '^#' input.txt > output.el
 ```
 
 Python tools require `networkx`; plotting also requires `matplotlib`.
+
+## Run the full suite on a larger computer
+
+`tools/run_large_experiments.py` is the portable, resumable runner for Linux and macOS using Python 3.11 or newer. It captures CPU, RAM, currently available memory, swap, OS, disk, Java, Python dependencies, Git revision, command duration, and peak process memory. It does not publish the hostname, hardware serial numbers, UUIDs, account paths, or Git remote URLs.
+
+First clone the repository and inspect the plan:
+
+```bash
+git clone https://github.com/hakin2/generic-decomposition-index.git
+cd generic-decomposition-index
+python3 tools/run_large_experiments.py --datasets all --heap-gb 512
+```
+
+Run all six datasets only on a machine with enough memory and disk. Download the UK-2002 Matrix Market archive first, then run:
+
+```bash
+python3 tools/run_large_experiments.py \
+  --execute \
+  --datasets all \
+  --heap-gb 512 \
+  --run-id large-server-1 \
+  --archive uk2002=/path/to/uk-2002.tar.gz \
+  --install-dependencies
+```
+
+Conservative guidance for the current object-heavy Java implementation:
+
+- LiveJournal: 128+ GiB RAM
+- Orkut: 384+ GiB RAM
+- UK-2002: 768+ GiB RAM
+- All datasets together: about 336 GiB free disk for downloads, normalized graphs, and sort workspace
+
+If the run stops, repeat the same command with `--resume`:
+
+```bash
+python3 tools/run_large_experiments.py \
+  --execute --datasets all --heap-gb 512 \
+  --run-id large-server-1 \
+  --archive uk2002=/path/to/uk-2002.tar.gz \
+  --install-dependencies --resume
+```
+
+UK-2002 is distributed as a Matrix Market archive. Download it from the [SuiteSparse UK-2002 page](https://sparse.tamu.edu/LAW/uk-2002); the runner requires the local `--archive uk2002=...` argument because the upstream download currently redirects through an endpoint that is not reliably available over HTTPS.
+
+The other large datasets come from [SNAP LiveJournal](https://snap.stanford.edu/data/com-LiveJournal.html) and [SNAP Orkut](https://snap.stanford.edu/data/com-Orkut.html).
+
+The runner executes timed Java jobs sequentially and may take hours or days. It measures the Index-Free fixed workload in the same number of repetitions as the TCP/EquiTruss workload. Working data and raw logs are stored under `runs/<run-id>/` and ignored by Git. Validated method CSVs, exact query manifests, combined CSVs, figures, sanitized command records, source hashes, system information, and a SHA-256 manifest are written to:
+
+```text
+remote-results/<run-id>/
+```
+
+After completion, follow `remote-results/<run-id>/PUSH_INSTRUCTIONS.txt` to commit and push that bundle. Dynamic updates and the named DBLP case study are not included because they require missing algorithms or metadata rather than additional computer power.
 
 ## Attribution
 

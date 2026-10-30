@@ -24,3 +24,6 @@ results/*/*
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Full experiment working directories can contain multi-gigabyte graphs and raw logs.
+runs/
