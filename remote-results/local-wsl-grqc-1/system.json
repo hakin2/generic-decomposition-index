@@ -1,0 +1,101 @@
+{
+  "architecture": "x86_64",
+  "available_memory_bytes": 12503076864,
+  "available_memory_gib": 11.644,
+  "captured_at_utc": "2026-11-01T23:10:43.787521+00:00",
+  "cpu_model": "AMD Ryzen 7 7700X 8-Core Processor",
+  "disk_free_bytes": 217742434304,
+  "disk_free_gib": 202.788,
+  "disk_total_bytes": 1023562215424,
+  "git_branch": {
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "main"
+  },
+  "git_commit": {
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "a174a4c6cc308fea8042cd66cf3ed2a8b62c03ad"
+  },
+  "git_status": {
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "host_commands": {
+    "free": {
+      "argv": [
+        "free",
+        "-b"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "total        used        free      shared  buff/cache   available\nMem:     16531480576  4017876992  4020432896    55455744  8801988608 12513603584\nSwap:     4294967296           0  4294967296"
+    },
+    "lscpu": {
+      "argv": [
+        "lscpu"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           48 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  16\nOn-line CPU(s) list:                     0-15\nVendor ID:                               AuthenticAMD\nModel name:                              AMD Ryzen 7 7700X 8-Core Processor\nCPU family:                              25\nModel:                                   97\nThread(s) per core:                      2\nCore(s) per socket:                      8\nSocket(s):                               1\nStepping:                                2\nBogoMIPS:                                8999.78\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx512_bf16 clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm\nVirtualization:                          AMD-V\nHypervisor vendor:                       Microsoft\nVirtualization type:                     full\nL1d cache:                               256 KiB (8 instances)\nL1i cache:                               256 KiB (8 instances)\nL2 cache:                                8 MiB (8 instances)\nL3 cache:                                32 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-15\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Vulnerable: Safe RET, no microcode\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Mitigation; Clear CPU buffers\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected"
+    },
+    "sw_vers": null
+  },
+  "java": {
+    "exit_code": 0,
+    "stderr": "openjdk version \"21.0.12.1\" 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-26.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-26.04.4-Ubuntu, mixed mode, sharing)",
+    "stdout": ""
+  },
+  "javac": {
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "javac 21.0.12.1"
+  },
+  "locale": {
+    "LANG": "C.UTF-8",
+    "LC_ALL": null
+  },
+  "logical_cpu_count": 16,
+  "physical_memory_bytes": 16531480576,
+  "physical_memory_gib": 15.396,
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": {
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "Python 3.14.4"
+  },
+  "release": "6.18.33.2-microsoft-standard-WSL2",
+  "runner_arguments": {
+    "allow_dirty": false,
+    "archive": [],
+    "construction_reps": 3,
+    "datasets": "grqc",
+    "execute": true,
+    "fixed_per_bucket": 100,
+    "force_resource_risk": false,
+    "heap_gb": 4,
+    "install_dependencies": true,
+    "java_home_supplied": false,
+    "query_reps": 5,
+    "resume": false,
+    "reuse_tracked_queries": true,
+    "run_id": "local-wsl-grqc-1",
+    "seed": 42,
+    "skip_index_free": false,
+    "skip_plots": false,
+    "skip_tcp": false,
+    "skip_truss_core": false,
+    "sweep_per_set": 100,
+    "timeout_hours": 0
+  },
+  "swap": {
+    "free_bytes": 4294967296,
+    "total_bytes": 4294967296
+  },
+  "system": "Linux",
+  "timezone": [
+    "PST",
+    "PDT"
+  ]
+}

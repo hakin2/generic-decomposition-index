@@ -1,0 +1,41 @@
+{
+  "configuration": {
+    "archive_overrides": {},
+    "construction_reps": 3,
+    "datasets": [
+      {
+        "archive_kind": "snap-gzip",
+        "expected_edges": 14484,
+        "expected_vertices": 5241,
+        "fixed_k": 5,
+        "key": "grqc",
+        "minimum_ram_gib": 8,
+        "source_page": "https://snap.stanford.edu/data/ca-GrQc.html",
+        "sweep_k": [
+          2,
+          3,
+          5,
+          8,
+          12,
+          20,
+          30,
+          43
+        ],
+        "title": "GrQc",
+        "url": "https://snap.stanford.edu/data/ca-GrQc.txt.gz"
+      }
+    ],
+    "fixed_per_bucket": 100,
+    "heap_gib": 4,
+    "query_reps": 5,
+    "reuse_tracked_queries": true,
+    "run_id": "local-wsl-grqc-1",
+    "seed": 42,
+    "skip_index_free": false,
+    "skip_plots": false,
+    "skip_tcp": false,
+    "skip_truss_core": false,
+    "sweep_per_set": 100
+  },
+  "created_at_utc": "2026-11-01T23:10:43.779854+00:00"
+}

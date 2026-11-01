@@ -1,0 +1,3 @@
+dataset,metric,repetitions,decomposition_s,index_construction_s,total_preparation_s,estimated_index_mb,super_nodes,super_edges,compression_level_ge_3
+grqc,truss,3,0.087800,0.043300,0.131900,0.1410,1569,889,8.2078
+grqc,core,3,0.023300,0.021900,0.044400,0.2084,3387,1075,8.0773

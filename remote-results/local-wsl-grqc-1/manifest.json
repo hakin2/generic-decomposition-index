@@ -1,0 +1,105 @@
+{
+  "files": [
+    {
+      "bytes": 219,
+      "path": "PUSH_INSTRUCTIONS.txt",
+      "sha256": "2f0bff4f460a77b3cc20a4f6065268df2c81d33912d8226f31ee95a73d4c763f"
+    },
+    {
+      "bytes": 8108,
+      "path": "commands.json",
+      "sha256": "396c65e18bd214e0bc70319a285725ed048fbaac64dd3aee94bbf7fce18af48d"
+    },
+    {
+      "bytes": 947,
+      "path": "config.json",
+      "sha256": "aa97c609d258d8a7ffb7e07398da1dddbc1a62a1597dbd19fabd4c2af0e7c657"
+    },
+    {
+      "bytes": 61368,
+      "path": "grqc/fixed_combined.csv",
+      "sha256": "221613a13e459982f4b066b605db34de95ad481824cb63cc4d04b448a83135d9"
+    },
+    {
+      "bytes": 42176,
+      "path": "grqc/fixed_no_tcp.csv",
+      "sha256": "87b8cea3dabc1afca6624e0558b8c6077e2b32309ecc1640dda216fd53dd0614"
+    },
+    {
+      "bytes": 15686,
+      "path": "grqc/fixed_queries.txt",
+      "sha256": "41b65295896de6669d9bca3adbfa51b963bcd8aba67354fa7b19e9b6bea8652f"
+    },
+    {
+      "bytes": 44031,
+      "path": "grqc/fixed_tcp.csv",
+      "sha256": "8ee419c9a9d72653b994baab3299b0acc7c96f851c969f6564bb2f81bf5fe8b5"
+    },
+    {
+      "bytes": 1826,
+      "path": "grqc/highlow_queries.txt",
+      "sha256": "97076be7175db3d53176cab775feab82be48e9ba08b6acc82c5932e9fc3468ac"
+    },
+    {
+      "bytes": 471,
+      "path": "grqc/source.json",
+      "sha256": "e0d13c818f614d19a82a791a754d095b3319940045d936b2189d41ae63c7c891"
+    },
+    {
+      "bytes": 5689,
+      "path": "grqc/sweep_combined.csv",
+      "sha256": "043f3c8cfee4fa7ca47ba2c0d9945de20972b920789115a200731091b4fb286d"
+    },
+    {
+      "bytes": 3833,
+      "path": "grqc/sweep_no_tcp.csv",
+      "sha256": "4726dc2087fba0995f7b50f1a162fe158db7ce2cfdacb3335ea7dabd246ece1c"
+    },
+    {
+      "bytes": 3849,
+      "path": "grqc/sweep_tcp.csv",
+      "sha256": "ba4c8b0adb33d0c9d573adae6e8d63b2590cad375a1e0eee8753097e171e6bf5"
+    },
+    {
+      "bytes": 240013,
+      "path": "grqc/sweep_with_tcp.png",
+      "sha256": "202dba89c462aaca099648edc878ac93b08e9492e97308ce3174dab27ba7eb10"
+    },
+    {
+      "bytes": 198351,
+      "path": "grqc/sweep_without_tcp.png",
+      "sha256": "41a219e1bb06f728f6eab2cdb6a602ea32e4f528cfa2386f29cde818c9709098"
+    },
+    {
+      "bytes": 116,
+      "path": "python-dependencies.json",
+      "sha256": "d9477768290b3fce8ad1f7a2bf8e211bd266758239df3eefe487ad162b8c5b8b"
+    },
+    {
+      "bytes": 242,
+      "path": "summary/grqc_fixed.csv",
+      "sha256": "83cfebbc56c14f183f4e9fbcf50fe6e9714a4269fbc684f24d7d567e0f4c3a22"
+    },
+    {
+      "bytes": 262,
+      "path": "summary/grqc_tcp_equitruss_index.csv",
+      "sha256": "ef3084bca13d68a9d7f5278fbce78c88f8f5f3a5ac1babcec15251e8bdfc0a8d"
+    },
+    {
+      "bytes": 276,
+      "path": "summary/grqc_truss_core.csv",
+      "sha256": "762049e03efb5e455190b00763a94ccd21181135740a55a9bcd04bc3cbd96553"
+    },
+    {
+      "bytes": 5991,
+      "path": "system.json",
+      "sha256": "bec87451efeb35a1efdde83c7d18ed0754ed64a93ba5000e80488487362cb3e3"
+    },
+    {
+      "bytes": 3425,
+      "path": "task_summary.csv",
+      "sha256": "79bc336b43ce4ae76fd154ceb36b5a3b678579684ae8b4a6e23cc2bb6823c08e"
+    }
+  ],
+  "generated_at_utc": "2026-11-01T23:11:28.248801+00:00"
+}

@@ -1,0 +1,2 @@
+# Preserve experiment artifact bytes so SHA-256 manifests survive Git checkouts.
+remote-results/** -text whitespace=cr-at-eol

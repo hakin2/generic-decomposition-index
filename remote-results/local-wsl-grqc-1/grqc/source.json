@@ -1,0 +1,12 @@
+{
+  "archive_filename": "ca-GrQc.txt.gz",
+  "archive_sha256": "a254442cdf5d684712578b630c2e0d7543518ab154ef2341cabb607572ce7230",
+  "dataset": "grqc",
+  "graph_sha256": "47d44aa2a51d5b4962fad5f512973f2ee45310b00139138498cbe0d3d88fe2e3",
+  "max_vertex_id": 26196,
+  "raw_edge_rows": 28980,
+  "source": "https://snap.stanford.edu/data/ca-GrQc.txt.gz",
+  "source_page": "https://snap.stanford.edu/data/ca-GrQc.html",
+  "undirected_unique_edges": 14484,
+  "vertices": 5241
+}

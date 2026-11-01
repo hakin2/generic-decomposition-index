@@ -1,0 +1,342 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/merge_tcp_results.py",
+        "fixed",
+        "$RUN/results/grqc/fixed-no-tcp/bench.csv",
+        "$RUN/results/grqc/fixed-tcp/bench.csv",
+        "$RUN/results/grqc/combined/bench.csv"
+      ],
+      "task": "grqc-fixed-merge"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/fixed-no-tcp/run-1",
+        "$RUN/queries/grqc_fixed.txt",
+        "1000"
+      ],
+      "task": "grqc-fixed-no-tcp-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/fixed-no-tcp/run-2",
+        "$RUN/queries/grqc_fixed.txt",
+        "1000"
+      ],
+      "task": "grqc-fixed-no-tcp-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/fixed-no-tcp/run-3",
+        "$RUN/queries/grqc_fixed.txt",
+        "1000"
+      ],
+      "task": "grqc-fixed-no-tcp-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/fixed-no-tcp/run-4",
+        "$RUN/queries/grqc_fixed.txt",
+        "1000"
+      ],
+      "task": "grqc-fixed-no-tcp-4"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/fixed-no-tcp/run-5",
+        "$RUN/queries/grqc_fixed.txt",
+        "1000"
+      ],
+      "task": "grqc-fixed-no-tcp-5"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainTcpBenchmark",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/fixed-tcp",
+        "$RUN/queries/grqc_fixed.txt",
+        "1000",
+        "5"
+      ],
+      "task": "grqc-fixed-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/isolated-index/equitruss-1",
+        "equitruss",
+        "1"
+      ],
+      "task": "grqc-index-equitruss-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/isolated-index/equitruss-2",
+        "equitruss",
+        "2"
+      ],
+      "task": "grqc-index-equitruss-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/isolated-index/equitruss-3",
+        "equitruss",
+        "3"
+      ],
+      "task": "grqc-index-equitruss-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/summarize_index_compare.py",
+        "$RUN/results/grqc/isolated-index/summary.csv",
+        "$RUN/results/grqc/isolated-index/tcp-1/index_compare.csv",
+        "$RUN/results/grqc/isolated-index/equitruss-1/index_compare.csv",
+        "$RUN/results/grqc/isolated-index/tcp-2/index_compare.csv",
+        "$RUN/results/grqc/isolated-index/equitruss-2/index_compare.csv",
+        "$RUN/results/grqc/isolated-index/tcp-3/index_compare.csv",
+        "$RUN/results/grqc/isolated-index/equitruss-3/index_compare.csv"
+      ],
+      "task": "grqc-index-summary-raw"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/isolated-index/tcp-1",
+        "tcp",
+        "1"
+      ],
+      "task": "grqc-index-tcp-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/isolated-index/tcp-2",
+        "tcp",
+        "2"
+      ],
+      "task": "grqc-index-tcp-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/isolated-index/tcp-3",
+        "tcp",
+        "3"
+      ],
+      "task": "grqc-index-tcp-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/metric/1"
+      ],
+      "task": "grqc-metric-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/metric/2"
+      ],
+      "task": "grqc-metric-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/metric/3"
+      ],
+      "task": "grqc-metric-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/plot_sweep.py",
+        "$RUN/results/grqc/combined/sweep.csv",
+        "$PUBLISH/grqc/sweep_with_tcp.png",
+        "GrQc",
+        "--sample-note",
+        "100 queries per degree set"
+      ],
+      "task": "grqc-plot-with_tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/plot_sweep.py",
+        "$RUN/results/grqc/combined/sweep.csv",
+        "$PUBLISH/grqc/sweep_without_tcp.png",
+        "GrQc",
+        "--without-tcp",
+        "--sample-note",
+        "100 queries per degree set"
+      ],
+      "task": "grqc-plot-without_tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/merge_tcp_results.py",
+        "sweep",
+        "$RUN/results/grqc/sweep-no-tcp/sweep.csv",
+        "$RUN/results/grqc/sweep-tcp/sweep.csv",
+        "$RUN/results/grqc/combined/sweep.csv"
+      ],
+      "task": "grqc-sweep-merge"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainSweep",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/sweep-no-tcp",
+        "$RUN/queries/grqc_highlow.txt",
+        "2,3,5,8,12,20,30,43",
+        "5"
+      ],
+      "task": "grqc-sweep-no-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainTcpSweep",
+        "$RUN/data/grqc.el",
+        "$RUN/results/grqc/sweep-tcp",
+        "$RUN/queries/grqc_highlow.txt",
+        "2,3,5,8,12,20,30,43",
+        "5"
+      ],
+      "task": "grqc-sweep-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms1g",
+        "-Xmx1g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainCore",
+        "data/toy.txt",
+        "$RUN/results/toy",
+        "data/toy_queries.txt"
+      ],
+      "task": "toy-main"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/oracle.py",
+        "data/toy.txt",
+        "data/toy_queries.txt",
+        "$RUN/results/toy/query_results.txt"
+      ],
+      "task": "toy-oracle"
+    }
+  ],
+  "runner_sha256": "b47238a382dbd131aaeb0dcacff0c543ede889b6e6e5f55e011bbb3634fa71b0"
+}

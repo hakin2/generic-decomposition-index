@@ -1,0 +1,2 @@
+dataset,k,queries,nonempty_queries,multi_community_queries,equitruss_mean_ms,tcp_mean_ms,indexfree_mean_ms,tcp_over_equi,free_over_equi,free_over_tcp,mean_answer_edges
+grqc,5,1000,179,39,0.008604,0.018909,0.587560,2.198,68.286,31.073,327.796
