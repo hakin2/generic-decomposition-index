@@ -1,0 +1,3 @@
+dataset,metric,repetitions,decomposition_s,index_construction_s,total_preparation_s,estimated_index_mb,super_nodes,super_edges,compression_level_ge_3
+amazon,truss,3,3.337100,0.958200,4.295200,9.7224,115060,103513,6.2112
+amazon,core,3,1.404600,1.039100,2.482000,15.5456,297882,60021,3.9673

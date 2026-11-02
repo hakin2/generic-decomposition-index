@@ -1,0 +1,3 @@
+graph,method,repetitions,vertices,edges,max_core,core_decomposition_s,construction_s,estimated_mb,structure_nodes,structure_edges
+dblp,equitruss,3,317080,1049866,113,1.017445,1.748337,23.135468,232067,150130
+dblp,tcp,3,317080,1049866,113,1.022377,2.426426,54.676647,2099732,1587483

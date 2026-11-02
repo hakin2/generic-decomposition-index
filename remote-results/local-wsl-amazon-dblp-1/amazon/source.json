@@ -1,0 +1,12 @@
+{
+  "archive_filename": "com-amazon.ungraph.txt.gz",
+  "archive_sha256": "bb4b9fcf549c9174049e885e9a0a4057c9724846e7297c4a1ea299b8e92eec34",
+  "dataset": "amazon",
+  "graph_sha256": "add6965e86c3b110e43d3f6d7f8cdd6ab4f0d2918363aa0861992b9fd000f8c1",
+  "max_vertex_id": 548551,
+  "raw_edge_rows": 925872,
+  "source": "https://snap.stanford.edu/data/bigdata/communities/com-amazon.ungraph.txt.gz",
+  "source_page": "https://snap.stanford.edu/data/com-Amazon.html",
+  "undirected_unique_edges": 925872,
+  "vertices": 334863
+}

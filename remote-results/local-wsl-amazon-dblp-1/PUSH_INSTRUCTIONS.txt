@@ -1,0 +1,6 @@
+Experiment run: local-wsl-amazon-dblp-1
+
+Review the bundle, then run from the repository root:
+  git add -- remote-results/local-wsl-amazon-dblp-1
+  git commit -m "Add experiment results from local-wsl-amazon-dblp-1"
+  git push origin HEAD

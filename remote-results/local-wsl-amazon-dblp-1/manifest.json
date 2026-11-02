@@ -1,0 +1,205 @@
+{
+  "files": [
+    {
+      "bytes": 240,
+      "path": "PUSH_INSTRUCTIONS.txt",
+      "sha256": "65748bf85ea43649c7520a82217ef9c475d62bab8565eb057e3a30b9edefea69"
+    },
+    {
+      "bytes": 62954,
+      "path": "amazon/fixed_combined.csv",
+      "sha256": "a56faefc9e6f00c2e5e067e483bedc8995ba1f72af69d42a52d0c623c124dadc"
+    },
+    {
+      "bytes": 43938,
+      "path": "amazon/fixed_no_tcp.csv",
+      "sha256": "c4d36da76d522f1eab747aeaae61c6f090ada85b667ff5eeecfd0ce1479f78f1"
+    },
+    {
+      "bytes": 16913,
+      "path": "amazon/fixed_queries.txt",
+      "sha256": "853f0c9efe0814397fc61fca19ece12bd29499615312aa5fde146e18361bb79c"
+    },
+    {
+      "bytes": 45637,
+      "path": "amazon/fixed_tcp.csv",
+      "sha256": "c8ceb1ec5870b9d088c079a51e19cb64757981622bf368d468d54bbb56007f59"
+    },
+    {
+      "bytes": 2096,
+      "path": "amazon/highlow_queries.txt",
+      "sha256": "5d7f4430d5e4f4fe1b7672d02c7836cd3e391da057e4788b3dff872c8b6af4ae"
+    },
+    {
+      "bytes": 523,
+      "path": "amazon/source.json",
+      "sha256": "4c8fd8672b956ba1615585e890f7162de31dcf909b6d6ac24381555fee482a27"
+    },
+    {
+      "bytes": 3607,
+      "path": "amazon/sweep_combined.csv",
+      "sha256": "4b0afe221da0983c90397138986781dc68fd32b40a03ca4caea50b18a3732e18"
+    },
+    {
+      "bytes": 2443,
+      "path": "amazon/sweep_no_tcp.csv",
+      "sha256": "52de44b38a67917f38e6a5d8c859a07b0d097506dab28398660de40cd8519fa0"
+    },
+    {
+      "bytes": 2453,
+      "path": "amazon/sweep_tcp.csv",
+      "sha256": "6cad4da2140470b72f46d0c4ec6ea2add890b15b7c6d3336e4509ba5364e91ff"
+    },
+    {
+      "bytes": 271248,
+      "path": "amazon/sweep_with_tcp.png",
+      "sha256": "e5a00aeaf233e34d067c5678a95d4c14d4e167a2ebef0e6d2b4ccb046b9df969"
+    },
+    {
+      "bytes": 219486,
+      "path": "amazon/sweep_without_tcp.png",
+      "sha256": "889bc26c0cb102e481ccd3c85377a75f9c1537a42ac044b1301e837273d51afa"
+    },
+    {
+      "bytes": 17576,
+      "path": "commands.json",
+      "sha256": "d0a48856218dbbab063f4658c71a2007adb5912ee944d5ac5924ab3184108860"
+    },
+    {
+      "bytes": 1428,
+      "path": "config.json",
+      "sha256": "f810bb47737ec7e4c559a65707ea39fb3dfe374430018085aa5456df5bb3e595"
+    },
+    {
+      "bytes": 64271,
+      "path": "dblp/fixed_combined.csv",
+      "sha256": "362266f8eb00198647644795c187319db6525f25964b802f2b3d2e18246cb883"
+    },
+    {
+      "bytes": 44821,
+      "path": "dblp/fixed_no_tcp.csv",
+      "sha256": "7c7ff0a4805f87dc298069896021c72946d32977212fd83884343e8fd1cae5e1"
+    },
+    {
+      "bytes": 16901,
+      "path": "dblp/fixed_queries.txt",
+      "sha256": "a2a562d09416152c62716bbcb6abf18ba87e41cb8a6413cdf2bb740d17bf5802"
+    },
+    {
+      "bytes": 46386,
+      "path": "dblp/fixed_tcp.csv",
+      "sha256": "9198b729d10590cb407d5e77486bc5eaedca4c03ea75ed562839365f39537c2e"
+    },
+    {
+      "bytes": 2093,
+      "path": "dblp/highlow_queries.txt",
+      "sha256": "6263a29322a91e5217b748c0ff6360f5ba7576116d602c58d33d4c576d498894"
+    },
+    {
+      "bytes": 517,
+      "path": "dblp/source.json",
+      "sha256": "53b5749a42ba1caeadb67205461a60e3116aaaae31de2bc809ee0b919afe74d9"
+    },
+    {
+      "bytes": 3035,
+      "path": "dblp/sweep_combined.csv",
+      "sha256": "31ff9c4ebbc118ceee03e570917156c26b9c407be6b03d1a59230d73b759b5b3"
+    },
+    {
+      "bytes": 2066,
+      "path": "dblp/sweep_no_tcp.csv",
+      "sha256": "1861c40b9f749b66e024e6ab854ff4cf8b689303b98d6f296899e786fbd804ae"
+    },
+    {
+      "bytes": 2059,
+      "path": "dblp/sweep_tcp.csv",
+      "sha256": "810b9c688356b296ed5a6263583db334b0e568b6a2d6d2c2829f9f6b8c7575ae"
+    },
+    {
+      "bytes": 262681,
+      "path": "dblp/sweep_with_tcp.png",
+      "sha256": "ef6cbbbf25b05990e6c17376a7ec5417f883730fdb571092ae6fff2b5ab0e9d3"
+    },
+    {
+      "bytes": 220133,
+      "path": "dblp/sweep_without_tcp.png",
+      "sha256": "fb0e156541e76b2b37d62f7e24aec1f22441e7c0c3c49a4e3222626658e474f0"
+    },
+    {
+      "bytes": 522,
+      "path": "dblp-deep/highlow_queries.txt",
+      "sha256": "d1508ddc82a3804f2818f9f8f2cbc65670cf7e1bd60ea7cd4d1d1804d980e6cf"
+    },
+    {
+      "bytes": 5860,
+      "path": "dblp-deep/sweep_combined.csv",
+      "sha256": "30284cafb4b29e298af29da25644833dbd45073bb41c0cc8eefda3d7c38a9520"
+    },
+    {
+      "bytes": 3957,
+      "path": "dblp-deep/sweep_no_tcp.csv",
+      "sha256": "02ac199315b5e1991ef2346e9e55b641ba667ad6e4d0faec9e678636165d0e5c"
+    },
+    {
+      "bytes": 3943,
+      "path": "dblp-deep/sweep_tcp.csv",
+      "sha256": "e38ee065147dd9943f44cf7decde6d39994b7adcac971f5e38f43716a7e552c2"
+    },
+    {
+      "bytes": 256000,
+      "path": "dblp-deep/sweep_with_tcp.png",
+      "sha256": "e781b427323c8d9a986a472f3259a5946fd6fdf7f21f9716c0a145bb3a68f8fb"
+    },
+    {
+      "bytes": 211950,
+      "path": "dblp-deep/sweep_without_tcp.png",
+      "sha256": "5cd585b2fe9776be796eb33942eb18e545e9d417458e7dac686e39acd7d585df"
+    },
+    {
+      "bytes": 116,
+      "path": "python-dependencies.json",
+      "sha256": "d9477768290b3fce8ad1f7a2bf8e211bd266758239df3eefe487ad162b8c5b8b"
+    },
+    {
+      "bytes": 244,
+      "path": "summary/amazon_fixed.csv",
+      "sha256": "b56b969bd7ff49bb706d024fd20d39290be8e8c7a51869872beae6edce31dc06"
+    },
+    {
+      "bytes": 279,
+      "path": "summary/amazon_tcp_equitruss_index.csv",
+      "sha256": "f3ac686d4651326901d6ea7d0096fe0d5df68668bb80635093fa07a776695512"
+    },
+    {
+      "bytes": 289,
+      "path": "summary/amazon_truss_core.csv",
+      "sha256": "ebcaca864e5381d42866df0b38d7eaabd972149993d3dba799e34e3eb973c83c"
+    },
+    {
+      "bytes": 246,
+      "path": "summary/dblp_fixed.csv",
+      "sha256": "8789b2a7fbc6e5fa997492a7edf67e18a90dfe5762b673d837c851d3edf93348"
+    },
+    {
+      "bytes": 282,
+      "path": "summary/dblp_tcp_equitruss_index.csv",
+      "sha256": "7f7bcc02eb8485f1579d4d9d214738c373684e72262163c88f633946b8fee228"
+    },
+    {
+      "bytes": 287,
+      "path": "summary/dblp_truss_core.csv",
+      "sha256": "67d815439c8aba8c49f1f705cb01705c15ac78add41edf23536f7cb7675fef90"
+    },
+    {
+      "bytes": 6004,
+      "path": "system.json",
+      "sha256": "18d2825dfd18f6ad9c0a145a6a72f0ce731e48cdbe9541265092c65e990bd611"
+    },
+    {
+      "bytes": 7426,
+      "path": "task_summary.csv",
+      "sha256": "10ce83825963c993be091ad1b9eec2e775dd27a75377ebc6ceefd874f5c7381c"
+    }
+  ],
+  "generated_at_utc": "2026-11-02T07:10:28.048092+00:00"
+}

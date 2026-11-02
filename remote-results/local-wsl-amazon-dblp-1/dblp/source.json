@@ -1,0 +1,12 @@
+{
+  "archive_filename": "com-dblp.ungraph.txt.gz",
+  "archive_sha256": "9eb0bd30312ddd04e2624f7c36c0983a2e99b116f0385be5a7fce6d6170f4cb3",
+  "dataset": "dblp",
+  "graph_sha256": "d98b4fc436446c28e452071813cf205e39f333e74e79a286a4b8edabe5ff680e",
+  "max_vertex_id": 425956,
+  "raw_edge_rows": 1049866,
+  "source": "https://snap.stanford.edu/data/bigdata/communities/com-dblp.ungraph.txt.gz",
+  "source_page": "https://snap.stanford.edu/data/com-DBLP.html",
+  "undirected_unique_edges": 1049866,
+  "vertices": 317080
+}

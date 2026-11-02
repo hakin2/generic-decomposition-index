@@ -1,0 +1,727 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/merge_tcp_results.py",
+        "fixed",
+        "$RUN/results/amazon/fixed-no-tcp/bench.csv",
+        "$RUN/results/amazon/fixed-tcp/bench.csv",
+        "$RUN/results/amazon/combined/bench.csv"
+      ],
+      "task": "amazon-fixed-merge"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/fixed-no-tcp/run-1",
+        "$RUN/queries/amazon_fixed.txt",
+        "1000"
+      ],
+      "task": "amazon-fixed-no-tcp-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/fixed-no-tcp/run-2",
+        "$RUN/queries/amazon_fixed.txt",
+        "1000"
+      ],
+      "task": "amazon-fixed-no-tcp-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/fixed-no-tcp/run-3",
+        "$RUN/queries/amazon_fixed.txt",
+        "1000"
+      ],
+      "task": "amazon-fixed-no-tcp-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/fixed-no-tcp/run-4",
+        "$RUN/queries/amazon_fixed.txt",
+        "1000"
+      ],
+      "task": "amazon-fixed-no-tcp-4"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/fixed-no-tcp/run-5",
+        "$RUN/queries/amazon_fixed.txt",
+        "1000"
+      ],
+      "task": "amazon-fixed-no-tcp-5"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainTcpBenchmark",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/fixed-tcp",
+        "$RUN/queries/amazon_fixed.txt",
+        "1000",
+        "5"
+      ],
+      "task": "amazon-fixed-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/isolated-index/equitruss-1",
+        "equitruss",
+        "1"
+      ],
+      "task": "amazon-index-equitruss-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/isolated-index/equitruss-2",
+        "equitruss",
+        "2"
+      ],
+      "task": "amazon-index-equitruss-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/isolated-index/equitruss-3",
+        "equitruss",
+        "3"
+      ],
+      "task": "amazon-index-equitruss-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/summarize_index_compare.py",
+        "$RUN/results/amazon/isolated-index/summary.csv",
+        "$RUN/results/amazon/isolated-index/tcp-1/index_compare.csv",
+        "$RUN/results/amazon/isolated-index/equitruss-1/index_compare.csv",
+        "$RUN/results/amazon/isolated-index/tcp-2/index_compare.csv",
+        "$RUN/results/amazon/isolated-index/equitruss-2/index_compare.csv",
+        "$RUN/results/amazon/isolated-index/tcp-3/index_compare.csv",
+        "$RUN/results/amazon/isolated-index/equitruss-3/index_compare.csv"
+      ],
+      "task": "amazon-index-summary-raw"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/isolated-index/tcp-1",
+        "tcp",
+        "1"
+      ],
+      "task": "amazon-index-tcp-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/isolated-index/tcp-2",
+        "tcp",
+        "2"
+      ],
+      "task": "amazon-index-tcp-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/isolated-index/tcp-3",
+        "tcp",
+        "3"
+      ],
+      "task": "amazon-index-tcp-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/metric/1"
+      ],
+      "task": "amazon-metric-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/metric/2"
+      ],
+      "task": "amazon-metric-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/metric/3"
+      ],
+      "task": "amazon-metric-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/plot_sweep.py",
+        "$RUN/results/amazon/combined/sweep.csv",
+        "$PUBLISH/amazon/sweep_with_tcp.png",
+        "Amazon",
+        "--sample-note",
+        "100 queries per degree set"
+      ],
+      "task": "amazon-plot-with_tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/plot_sweep.py",
+        "$RUN/results/amazon/combined/sweep.csv",
+        "$PUBLISH/amazon/sweep_without_tcp.png",
+        "Amazon",
+        "--without-tcp",
+        "--sample-note",
+        "100 queries per degree set"
+      ],
+      "task": "amazon-plot-without_tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/merge_tcp_results.py",
+        "sweep",
+        "$RUN/results/amazon/sweep-no-tcp/sweep.csv",
+        "$RUN/results/amazon/sweep-tcp/sweep.csv",
+        "$RUN/results/amazon/combined/sweep.csv"
+      ],
+      "task": "amazon-sweep-merge"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainSweep",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/sweep-no-tcp",
+        "$RUN/queries/amazon_highlow.txt",
+        "2,3,4,5,6",
+        "5"
+      ],
+      "task": "amazon-sweep-no-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainTcpSweep",
+        "$RUN/data/amazon.el",
+        "$RUN/results/amazon/sweep-tcp",
+        "$RUN/queries/amazon_highlow.txt",
+        "2,3,4,5,6",
+        "5"
+      ],
+      "task": "amazon-sweep-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/merge_tcp_results.py",
+        "sweep",
+        "$RUN/results/dblp-deep/sweep-no-tcp/sweep.csv",
+        "$RUN/results/dblp-deep/sweep-tcp/sweep.csv",
+        "$RUN/results/dblp-deep/combined/sweep.csv"
+      ],
+      "task": "dblp-deep-merge"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/plot_sweep.py",
+        "$RUN/results/dblp-deep/combined/sweep.csv",
+        "$PUBLISH/dblp-deep/sweep_with_tcp.png",
+        "DBLP-deep-core",
+        "--set-kind",
+        "core",
+        "--sample-note",
+        "core >= 40; 20 queries per set"
+      ],
+      "task": "dblp-deep-plot-with_tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/plot_sweep.py",
+        "$RUN/results/dblp-deep/combined/sweep.csv",
+        "$PUBLISH/dblp-deep/sweep_without_tcp.png",
+        "DBLP-deep-core",
+        "--without-tcp",
+        "--set-kind",
+        "core",
+        "--sample-note",
+        "core >= 40; 20 queries per set"
+      ],
+      "task": "dblp-deep-plot-without_tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainSweep",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp-deep/sweep-no-tcp",
+        "$REPO/data/dblp_deepcore.txt",
+        "40,50,60,70,80,90,100,113",
+        "5"
+      ],
+      "task": "dblp-deep-sweep-no-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainTcpSweep",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp-deep/sweep-tcp",
+        "$REPO/data/dblp_deepcore.txt",
+        "40,50,60,70,80,90,100,113",
+        "5"
+      ],
+      "task": "dblp-deep-sweep-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/merge_tcp_results.py",
+        "fixed",
+        "$RUN/results/dblp/fixed-no-tcp/bench.csv",
+        "$RUN/results/dblp/fixed-tcp/bench.csv",
+        "$RUN/results/dblp/combined/bench.csv"
+      ],
+      "task": "dblp-fixed-merge"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/fixed-no-tcp/run-1",
+        "$RUN/queries/dblp_fixed.txt",
+        "1000"
+      ],
+      "task": "dblp-fixed-no-tcp-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/fixed-no-tcp/run-2",
+        "$RUN/queries/dblp_fixed.txt",
+        "1000"
+      ],
+      "task": "dblp-fixed-no-tcp-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/fixed-no-tcp/run-3",
+        "$RUN/queries/dblp_fixed.txt",
+        "1000"
+      ],
+      "task": "dblp-fixed-no-tcp-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/fixed-no-tcp/run-4",
+        "$RUN/queries/dblp_fixed.txt",
+        "1000"
+      ],
+      "task": "dblp-fixed-no-tcp-4"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainBenchmark",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/fixed-no-tcp/run-5",
+        "$RUN/queries/dblp_fixed.txt",
+        "1000"
+      ],
+      "task": "dblp-fixed-no-tcp-5"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainTcpBenchmark",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/fixed-tcp",
+        "$RUN/queries/dblp_fixed.txt",
+        "1000",
+        "5"
+      ],
+      "task": "dblp-fixed-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/isolated-index/equitruss-1",
+        "equitruss",
+        "1"
+      ],
+      "task": "dblp-index-equitruss-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/isolated-index/equitruss-2",
+        "equitruss",
+        "2"
+      ],
+      "task": "dblp-index-equitruss-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/isolated-index/equitruss-3",
+        "equitruss",
+        "3"
+      ],
+      "task": "dblp-index-equitruss-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/summarize_index_compare.py",
+        "$RUN/results/dblp/isolated-index/summary.csv",
+        "$RUN/results/dblp/isolated-index/tcp-1/index_compare.csv",
+        "$RUN/results/dblp/isolated-index/equitruss-1/index_compare.csv",
+        "$RUN/results/dblp/isolated-index/tcp-2/index_compare.csv",
+        "$RUN/results/dblp/isolated-index/equitruss-2/index_compare.csv",
+        "$RUN/results/dblp/isolated-index/tcp-3/index_compare.csv",
+        "$RUN/results/dblp/isolated-index/equitruss-3/index_compare.csv"
+      ],
+      "task": "dblp-index-summary-raw"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/isolated-index/tcp-1",
+        "tcp",
+        "1"
+      ],
+      "task": "dblp-index-tcp-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/isolated-index/tcp-2",
+        "tcp",
+        "2"
+      ],
+      "task": "dblp-index-tcp-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainIndexCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/isolated-index/tcp-3",
+        "tcp",
+        "3"
+      ],
+      "task": "dblp-index-tcp-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/metric/1"
+      ],
+      "task": "dblp-metric-1"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/metric/2"
+      ],
+      "task": "dblp-metric-2"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainMetricCompare",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/metric/3"
+      ],
+      "task": "dblp-metric-3"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/plot_sweep.py",
+        "$RUN/results/dblp/combined/sweep.csv",
+        "$PUBLISH/dblp/sweep_with_tcp.png",
+        "DBLP",
+        "--sample-note",
+        "100 queries per degree set"
+      ],
+      "task": "dblp-plot-with_tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/plot_sweep.py",
+        "$RUN/results/dblp/combined/sweep.csv",
+        "$PUBLISH/dblp/sweep_without_tcp.png",
+        "DBLP",
+        "--without-tcp",
+        "--sample-note",
+        "100 queries per degree set"
+      ],
+      "task": "dblp-plot-without_tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/merge_tcp_results.py",
+        "sweep",
+        "$RUN/results/dblp/sweep-no-tcp/sweep.csv",
+        "$RUN/results/dblp/sweep-tcp/sweep.csv",
+        "$RUN/results/dblp/combined/sweep.csv"
+      ],
+      "task": "dblp-sweep-merge"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainSweep",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/sweep-no-tcp",
+        "$RUN/queries/dblp_highlow.txt",
+        "2,5,10,20",
+        "5"
+      ],
+      "task": "dblp-sweep-no-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms4g",
+        "-Xmx4g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainTcpSweep",
+        "$RUN/data/dblp.el",
+        "$RUN/results/dblp/sweep-tcp",
+        "$RUN/queries/dblp_highlow.txt",
+        "2,5,10,20",
+        "5"
+      ],
+      "task": "dblp-sweep-tcp"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/java",
+        "-Xms1g",
+        "-Xmx1g",
+        "-cp",
+        "$RUN/build/experiments.jar",
+        "MainCore",
+        "data/toy.txt",
+        "$RUN/results/toy",
+        "data/toy_queries.txt"
+      ],
+      "task": "toy-main"
+    },
+    {
+      "argv": [
+        "$EXTERNAL/python3.14",
+        "tools/oracle.py",
+        "data/toy.txt",
+        "data/toy_queries.txt",
+        "$RUN/results/toy/query_results.txt"
+      ],
+      "task": "toy-oracle"
+    }
+  ],
+  "runner_sha256": "b47238a382dbd131aaeb0dcacff0c543ede889b6e6e5f55e011bbb3634fa71b0"
+}

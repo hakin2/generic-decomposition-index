@@ -1,0 +1,7 @@
+{
+  "python_executable": "python3",
+  "versions": {
+    "matplotlib": "3.10.7+dfsg1",
+    "networkx": "3.2.1"
+  }
+}

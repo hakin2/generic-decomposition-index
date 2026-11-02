@@ -1,0 +1,3 @@
+dataset,metric,repetitions,decomposition_s,index_construction_s,total_preparation_s,estimated_index_mb,super_nodes,super_edges,compression_level_ge_3
+dblp,truss,3,4.737100,1.395300,6.092200,11.1548,126904,105409,7.6966
+dblp,core,3,1.516800,1.266600,2.782700,15.1256,232067,150130,6.5764

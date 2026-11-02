@@ -1,0 +1,2 @@
+dataset,k,queries,nonempty_queries,multi_community_queries,equitruss_mean_ms,tcp_mean_ms,indexfree_mean_ms,tcp_over_equi,free_over_equi,free_over_tcp,mean_answer_edges
+dblp,5,1000,321,95,4.581001,9.276869,150.824097,2.025,32.924,16.258,80515.159

@@ -1,0 +1,2 @@
+dataset,k,queries,nonempty_queries,multi_community_queries,equitruss_mean_ms,tcp_mean_ms,indexfree_mean_ms,tcp_over_equi,free_over_equi,free_over_tcp,mean_answer_edges
+amazon,4,1000,511,220,0.012339,0.026578,0.182533,2.154,14.793,6.868,291.635
